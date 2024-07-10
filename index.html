@@ -6,6 +6,21 @@
     <title>Unity WebGL Player | HitToothMonsterWebtest1</title>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
+      <style>
+      body {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      #unity-canvas {
+        background: #231F20;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+      }
+    </style>
     <canvas id="unity-canvas" width=1080 height=1920 style="width: 1080px; height: 1920px; background: #231F20"></canvas>
     <script src="Build/HitToothMonsterWeb.loader.js"></script>
 	<script src="https://telegram.org/js/telegram-web-app.js"></script>
