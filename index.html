@@ -29,7 +29,35 @@
 		}
 
     </script>
+<script>
+      function resizeCanvas() {
+        var canvas = document.getElementById('unity-canvas');
+        var windowWidth = window.innerWidth;
+        var windowHeight = window.innerHeight;
+        
+        // Получаем соотношение сторон холста и окна
+        var canvasAspect = canvas.width / canvas.height;
+        var windowAspect = windowWidth / windowHeight;
 
+        if (windowAspect < canvasAspect) {
+          // Если окно шире, чем холст, масштабируем по ширине
+          canvas.style.width = windowWidth + 'px';
+          canvas.style.height = (windowWidth / canvasAspect) + 'px';
+        } else {
+          // Если окно выше, чем холст, масштабируем по высоте
+          canvas.style.width = (windowHeight * canvasAspect) + 'px';
+          canvas.style.height = windowHeight + 'px';
+        }
+        
+        canvas.style.position = 'absolute';
+        canvas.style.left = '50%';
+        canvas.style.top = '50%';
+        canvas.style.transform = 'translate(-50%, -50%)';
+      }
+
+      window.addEventListener('resize', resizeCanvas);
+      window.addEventListener('load', resizeCanvas);
+</script>
     <script>
 	// Функция для открытия URL через Telegram WebApp или обычный браузер
     function openURL(url) {
