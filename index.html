@@ -46,6 +46,8 @@
           window.addEventListener('resize', resizeCanvas);
           window.addEventListener('load', resizeCanvas);
       </script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" defer></script>
+
   <script>
         function sha256(message) {
             return CryptoJS.SHA256(message).toString(CryptoJS.enc.Hex);
